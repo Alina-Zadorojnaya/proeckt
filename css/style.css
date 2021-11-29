@@ -1,0 +1,281 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    display: inline-block;
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+    border: 1px solid transparent;
+}
+
+input,
+textarea {
+    font: inherit;
+    padding: 0;
+    border: none;
+    appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: inherit;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+body {
+    margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 400;
+    background-color: #ffffff;
+    color: #767676;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+
+.menu {
+    position: relative;
+    padding: 15px 0;
+ /*   z-index: 9999;
+    box-shadow: 0 1px 4px rgb(2 3 3 / 10%);*/
+}
+
+.menu, .menu__list { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.menu__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.menu__link {
+    text-transform: uppercase;
+    padding: 0 5px;
+    font-weight: 500;
+    color: #777777;
+    position: relative;
+    transform: rotate(-5deg);
+    transition: all 1s, 5s,  1ms;
+}
+
+.menu__link:hover:after {
+    background-color: #afafaf;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin-top: -1px;
+    -webkit-margin-before: -2px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+
+.menu__btn {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 30;
+    
+}
+
+.menu__btn span,
+.menu__btn::before,
+.menu__btn::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    left: 0;
+    background-color: #333333;
+}
+
+.menu__btn span {
+    top: 8px;
+}
+
+.menu__btn::before {
+    top: 0;
+}
+
+.menu__btn::after {
+    bottom: 0;
+}
+
+
+/* start burger ----- menu---*/
+.burger {
+    max-width: 300px;
+    width: 100%;
+    height: 100vh;
+    background-color: #333333;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 30px;
+    transform: translate(100%);
+    transition:  1s;
+    transition-timing-function: cubic-bezier(0.1, 0.5, 1.0, 0.1);
+}
+
+.burger.active {
+    transform: translate(0%);
+}
+
+.burger__title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #a1a1a1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.burger__inner {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    
+}
+
+.burger__item {
+    padding: 13px 0;
+    border-top: 1px solid #555555;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1)
+}
+
+.burger__item:hover,
+.burger__item:active {
+    background-color: #000000;
+}
+
+.burger__link {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.burger__btn {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #767676;
+    font-size: 24px;
+}
+
+/* ----- end burger menu ----*/
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.header__item {
+    max-width: 485px;
+}
+
+.header__title {
+    color: #4f4f4f;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.header__title span {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.headre__text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+.header__btn {
+    padding: 17px 50px;
+    background-color: #393939;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.header__btn:active {
+    opacity: 0.7;
+}
+
+
+.header__img {
+    max-width: 350px;
+    height: 450px;
+    
+}
